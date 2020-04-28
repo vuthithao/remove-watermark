@@ -69,7 +69,7 @@ def watermask(img):
     dis = np.amax(gray) - np.amin(gray)
     color = img.mean(axis=0).mean(axis=0)
     alpha = 2.0
-    beta = -160
+    beta = -10
     if sum(color/3) < 250 and dis > 190:
         new = alpha * img + beta
         new = np.clip(new, 0, 255).astype(np.uint8)
